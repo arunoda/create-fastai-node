@@ -317,7 +317,7 @@ show_jupyter_link () {
   echo -ne "Waiting for Jupyter "
   wait_for_command "fastai-1" "curl http://localhost:8080"
 
-  external_ip=$(gcloud compute --project=$DEVSHELL_PROJECT_ID instances list | grep fastai-1 | sed 's/  */ /g' | cut -d ' ' -f6)
+  external_ip=$(gcloud compute --project=$DEVSHELL_PROJECT_ID instances list | grep fastai-1 | sed 's/  */ /g' | cut -d ' ' -f5)
   echo "Access notebooks via http://${external_ip}:8080"
 }
 
